@@ -462,6 +462,7 @@ function runLoader() {
     segs.forEach(([s, off, len]) => {
       const fill = Math.max(0, Math.min(len, p - off));
       const el = $(s);
+      if (!el) return;
       el.style.strokeDasharray = `${fill} 100`;
       el.style.strokeDashoffset = -off;
     });
